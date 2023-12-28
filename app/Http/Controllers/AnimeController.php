@@ -21,6 +21,16 @@ class AnimeController extends Controller
         ]);
     }
 
+    public function search (Request $request)
+    {
+        $response_search = Request('searchanime');
+        $response = Http::get("https://api.jikan.moe/v4/anime?q=$response_search")['data'];
+        return Inertia::render("HomePages",[
+        'title'=>"halaman home",
+        'result'=>$response
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

@@ -17,6 +17,7 @@ use Inertia\Inertia;
 |
 */
 Route::get("/", [AnimeController::class,"index"]);
+Route::get("/search", [AnimeController::class,"search"]);
 Route::get("/show/{mal_id}", [AnimeController::class,"show"]);
 /*
 Route::get('/', function () {
